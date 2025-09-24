@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla 🍦</title>
+    <style>
+      body {
+        background-color: hsl(0, 0%, 11%);
+        color: lightgray;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        margin: 30px;
+        text-align: center;
+      }
+      input {
+        padding: 5px;
+      }
+
+      .country-result {
+        padding: 5px;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 100px;
+      }
+
+      #favorite-results {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        background-color: hsl(0, 0%, 11%);
+      }
+
+      #favorite-results img {
+        width: 25px;
+        margin: 5px;
+      }
+
+      .country-data {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        width: 600px;
+      }
+
+      .country-data-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+      }
+      .country-img {
+        border: 3px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="./index.js"></script>
+    <div id="favorite-results"></div>
+
+    <h1>Country Finder</h1>
+    <input id="country-search" type="text" placeholder="Search for a country" />
+
+    <div id="country-results"></div>
+
+    <template id="country-template">
+      <div class="country-result">
+        <h2 class="country-name"></h2>
+        <div class="country-data">
+          <div class="country-data-left">
+            <button class="country-favorite" onclick="favorite(this);">
+              Favorite 💖
+            </button>
+            <p class="country-population">Population:&nbsp;</p>
+            <p class="country-region">Region:&nbsp;</p>
+            <p class="country-capital">Capital:&nbsp;</p>
+          </div>
+          <img class="country-img" src="" alt="" />
+        </div>
+      </div>
+    </template>
+
+    <template id="favorite-template">
+      <div class="favorite-result">
+        <img class="favorite-flag" src="" alt="" />
+      </div>
+    </template>
+  </body>
+</html>
