@@ -5,16 +5,24 @@
 1. npm create vite@latest
 2. Tailwind
 
+   Get Tailwind dependencies from npm
    ```
    npm install tailwindcss @tailwindcss/vite
    ```
 
+   Add to an imported css file. (App.css or index.css work)
+   ```
+   @import "tailwindcss"
+   ```
+
+   Update vite.config.ts
    ```typescript
    import { defineConfig } from "vite";
+   import react from "@vitejs/plugin-react";
    import tailwindcss from "@tailwindcss/vite";
 
    export default defineConfig({
-     plugins: [tailwindcss()],
+     plugins: [react(), tailwindcss()],
    });
    ```
 
